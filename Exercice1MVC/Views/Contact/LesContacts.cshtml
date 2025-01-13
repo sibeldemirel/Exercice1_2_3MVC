@@ -1,5 +1,27 @@
-﻿@{
-	ViewData["Title"] = "Les contacts";
+﻿@model List<Exercice1MVC.Models.ContactModel>
+
+@{
+    ViewBag.Title = "Liste des Contacts";
 }
-<h1>@ViewData["Title"]</h1>
-<p>@ViewBag.Message</p>
+
+<h2>@ViewBag.Message</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Numéro de téléphone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model)
+        {
+            <tr>
+                <td>@contact.Name</td>
+                <td>@contact.PhoneNumber</td>
+                <td>@contact.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
